@@ -14,7 +14,7 @@ jobs:
           node-version: 14
       - run: npm ci && npm run publish
         env:
-          GITHUB_PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: sudo bash ./scripts/publish-from-actions.sh
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: sudo sh ./scripts/publish-from-actions.sh
         env:
-          GITHUB_PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
