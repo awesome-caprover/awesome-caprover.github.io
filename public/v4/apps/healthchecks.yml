@@ -1,11 +1,11 @@
 captainVersion: 4
 services:
   '$$cap_appname':
-    image: ghcr.io/linuxserver/healthchecks
+    image: ghcr.io/linuxserver/healthchecks:$$cap_healthchecks_version
     container_name: healthchecks
     environment:
-      PUID: '$$cap_PUID'
-      PGID: '$$cap_PGID'
+      PUID: 1000
+      PGID: 1000
       SITE_ROOT: '$$cap_SITE_ROOT'
       SITE_NAME: '$$cap_SITE_NAME'
       DEFAULT_FROM_EMAIL: '$$cap_DEFAULT_FROM_EMAIL'
@@ -25,16 +25,66 @@ services:
 
 caproverOneClickApp:
   variables:
-    - id: '$$cap_myapp_version'
+    - id: '$$cap_healthchecks_version'
       label: HealthChecks
-      defaultValue: '1.2.3'
-      description: Check out their Docker page for the valid tags https://hub.docker.com/r/....../tags
-      validRegex: "/.{1,}/"
+      defaultValue: 'latest'
+      description: Check out their Docker page for the valid tags https://github.com/orgs/linuxserver/packages/container/healthchecks/versions
+
+    - id: '$$cap_SITE_ROOT'
+      label: Site Root
+      defaultValue: 'https://example.com'
+      description: Custom Domain
+
+    - id: '$$cap_SITE_NAME'
+      label: Site Name
+      defaultValue: 'Personal CRON Monitor'
+
+    - id: '$$cap_DEFAULT_FROM_EMAIL'
+      label: Default From EMAIL
+      defaultValue: 'healthchecks@example.org'
+
+    - id: '$$cap_EMAIL_HOST'
+      label: SMTP Email Host
+      defaultValue: ''
+
+    - id: '$$cap_EMAIL_PORT'
+      label: SMTP Email Port
+      defaultValue: ''
+
+    - id: '$$cap_EMAIL_HOST_USER'
+      label: SMTP Email User
+      defaultValue: ''
+
+    - id: '$$cap_EMAIL_HOST_PASSWORD'
+      label: SMTP Email Password
+      defaultValue: ''
+
+    - id: '$$cap_EMAIL_USE_TLS'
+      label: SMTP EMAIL Use TLS
+      defaultValue: ''
+
+    - id: '$$cap_ALLOWED_HOSTS'
+      label: ALLOWED_HOSTS
+      defaultValue: '*'
+      description: Separate multiple hosts with commas
+
+    - id: '$$cap_SUPERUSER_EMAIL'
+      label: Super Admin Eamil
+      defaultValue: ''
+      description: Admin User Email ID
+
+    - id: '$$cap_SUPERUSER_PASSWORD'
+      label: Super Admin Password
+      defaultValue: ''
+      description: Admin User Password
+
   instructions:
     start: |-
       Simple and Effective Cron Job Monitoring
       We notify you when your nightly backups, weekly reports, cron jobs and scheduled tasks don't run on time.
+
     end: |-
+      Start sleeping better at night!
 
   displayName: Health Checks
   isOfficial: false
