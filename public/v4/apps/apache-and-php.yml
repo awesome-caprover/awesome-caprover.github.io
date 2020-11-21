@@ -4,7 +4,7 @@ services:
     image: ghcr.io/varunsridharan/php-webserver:$$cap_php_version-apache
     container_name: apache_and_php
     volumes:
-      - $$cap_appname-wp-data:/var/www/html
+      - $$cap_php_version:/var/www/html
     restart: always
 
 caproverOneClickApp:
