@@ -4,7 +4,7 @@ services:
     image: ghcr.io/varunsridharan/php-webserver:$$cap_php_version-apache
     container_name: apache_and_php
     volumes:
-      - $$cap_php_version:/var/www/html
+      - $$cap_webroot:/var/www/html
     restart: always
 
 caproverOneClickApp:
@@ -13,6 +13,11 @@ caproverOneClickApp:
       label: PHP Version
       defaultValue: '7.3'
       description: Possible Options 7.1 | 7.2 | 7.3 | 7.4
+
+    - id: '$$cap_webroot'
+      label: Webroot
+      defaultValue: $$cap_appname-wp-data
+      description: Where to store datas
 
   instructions:
     start: |-
