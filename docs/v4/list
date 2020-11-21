@@ -1,1 +1,1 @@
-{"oneClickApps":[{"name":"healthchecks","displayName":"Health Checks","description":"Simple and Effective Cron Job Monitoring","isOfficial":false,"logoUrl":"healthchecks.png"}]}
+{"oneClickApps":[{"name":"apache-and-php","displayName":"Apache & PHP","description":"Quick Way To Install Apache & PHP","isOfficial":false,"logoUrl":"apache-and-php.png"},{"name":"healthchecks","displayName":"Health Checks","description":"Simple and Effective Cron Job Monitoring","isOfficial":false,"logoUrl":"healthchecks.png"}]}
