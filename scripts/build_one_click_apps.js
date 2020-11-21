@@ -18,7 +18,7 @@ const fs = require('fs-extra');
 
 const pathOfPublic = path.join(__dirname, '..', `public`);
 
-const pathOfDist = path.join(__dirname, '..', `dist`);
+const pathOfDist = path.join(__dirname, '..', `docs`);
 
 const pathOfDistV2 = path.join(pathOfDist, 'v2');
 const pathOfDistV3 = path.join(pathOfDist, 'v3');
