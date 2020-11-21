@@ -29,6 +29,8 @@ set -e
 BUILD_DIR=dist
 SOURCE_DIRECTORY_DEPLOY_GH=~/temp-gh-deploy-src
 CLONED_DIRECTORY_DEPLOY_GH=~/temp-gh-deploy-cloned
+GITHUB_REPOSITORY="awesome-caprover/app-repository"
+GITHUB_ACTOR="varunsridharan"
 
 echo "#############################################" 
 echo "######### making directories" 
